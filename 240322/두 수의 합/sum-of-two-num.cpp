@@ -19,8 +19,8 @@ int main() {
     for(int i = 0; i < v.size(); i++) {
         if(v[i] > k / 2) break;
         if(v[i] == k - v[i]) {
-            cnt += m[v[i]] - 1;
-            m[v[i]] = 1;
+            cnt += m[v[i]] * (m[v[i]] - 1) / 2;
+            m[v[i]] = 0;
         }
         else {
             cnt += m[k - v[i]];
